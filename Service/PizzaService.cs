@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace api_pizza.Service
 {
-    public class PizzaService
+    public static class PizzaService
     {
         public static IEnumerable<Pizza> GetPizzasbytype(string type)
         {
@@ -25,6 +25,14 @@ namespace api_pizza.Service
             
             return query;
         }
+
+        public static double ConvertToEur( this double usd )
+        {
+            return Math.Round(usd * 0.85, 2);
+        }
+    }
+
+}
 
     // public static class ExtensionMethods
     // {​​​
@@ -48,6 +56,3 @@ namespace api_pizza.Service
     //         }​​​
     //     }​​​
     // }​​​
-    }
-
-}

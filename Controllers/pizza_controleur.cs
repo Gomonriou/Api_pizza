@@ -19,12 +19,35 @@ namespace api_pizza.Controllers
     {
 
         [HttpGet]
-        public IEnumerable<Pizza> Get()
+        [Route("{name}")]
+        public IEnumerable<Pizza> Get(string name)
         {
-            return PizzaService.GetPizzasbytype("orientale");
-            
+            return PizzaService.GetPizzasbytype(name);           
         }
 
-    
+        [HttpGet]
+        public IEnumerable<Pizza> GetAll()
+        {
+            return PizzaService.Getall();
+        }
+
+        public static double Convert()
+        {
+            return PizzaService.ConvertToEur(10);
+        }
     }    
 }
+
+// try
+// {
+//     double? p = null;
+//     p ??= Predicate;
+//     p = null;
+//     return p.ConvertToEur();
+// }
+// catch (Exception e)
+// {
+//     Console.WriteLine("PriceService: " + e);
+// }
+
+// return 0;
