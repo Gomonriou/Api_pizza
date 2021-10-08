@@ -26,15 +26,12 @@ namespace api_pizza.Controllers
         }
 
         [HttpGet]
+        [Route("All")]
         public IEnumerable<Pizza> GetAll()
         {
             return PizzaService.Getall();
         }
 
-        public static double Convert()
-        {
-            return PizzaService.ConvertToEur(10);
-        }
     }    
 }
 

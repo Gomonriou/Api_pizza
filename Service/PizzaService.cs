@@ -25,13 +25,8 @@ namespace api_pizza.Service
             
             return query;
         }
-
-        public static double ConvertToEur( this double usd )
-        {
-            return Math.Round(usd * 0.85, 2);
-        }
     }
-
+    
 }
 
     // public static class ExtensionMethods
