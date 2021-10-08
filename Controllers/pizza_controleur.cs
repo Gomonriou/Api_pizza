@@ -27,24 +27,18 @@ namespace api_pizza.Controllers
 
         [HttpGet]
         [Route("All")]
-        public IEnumerable<Pizza> GetAll()
+        public ActionResult<IEnumerable<Pizza>> GetAll()
         {
-            return PizzaService.Getall();
+            try
+            {
+               return Ok(PizzaService.Getall());
+            }   
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return StatusCode(500);
+            }         
         }
 
     }    
 }
-
-// try
-// {
-//     double? p = null;
-//     p ??= Predicate;
-//     p = null;
-//     return p.ConvertToEur();
-// }
-// catch (Exception e)
-// {
-//     Console.WriteLine("PriceService: " + e);
-// }
-
-// return 0;
