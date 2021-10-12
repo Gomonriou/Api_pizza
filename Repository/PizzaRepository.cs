@@ -14,7 +14,7 @@ namespace api_pizza.Repository
                 1,
                 "hawaian", 
                 "Sauce tomate, mozzarella, poulet, oignons, ananas, poivrons mélangés", 
-                0));
+                2));
             
             pizzas.Add(new Pizza(
                 2,
